@@ -16,3 +16,5 @@ print(type(soup))
 print(soup)
 print(soup.h1)
 print(soup.b.string)
+
+# =============================== SEARCHING IN A TREE WITH FILTERS ==========================
