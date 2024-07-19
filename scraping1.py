@@ -38,3 +38,10 @@ def allTagNames():
         print(tag.name)
 
 allTagNames()
+print(" =============================== PARENT AND SIBLING FUNCTIONS ==========================")
+mainChar = soup2.find(id="about")
+findSibling = mainChar.find_next_sibling()
+findSibling2 = mainChar.find_previous_sibling()
+findParent = mainChar.find_parent()
+
+print(findParent)
