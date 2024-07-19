@@ -1,4 +1,5 @@
 from bs4 import  BeautifulSoup
+import re
 
 html_doc= """
 <html>
@@ -45,3 +46,9 @@ findSibling2 = mainChar.find_previous_sibling()
 findParent = mainChar.find_parent()
 
 print(findParent)
+print(" =============================== USING REGULAR EXPRESSION  ==========================")
+emailExample = "<br><h1>Searching tor the email</h1><p>jeniperkuki@gmail.com</p><p>onyangoje123@gmail.com</p>"
+soup3 = BeautifulSoup(emailExample,"lxml")
+myEmail = re.compile("\w+@\w+\.\w+")
+email_id = soup3.findAll(text=myEmail)
+print (email_id[1])
