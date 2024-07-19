@@ -16,3 +16,12 @@ find_next_sibling() = All these scan only for the first  match in the document/t
 
 ### lxml parser installation
 - pip install lxml
+
+## Tasks
+
+### Task 1: Write code that Extracts mails from a website, Populates on a table and Displays in designed HTML frontend
+
+- Libraries and Utils: lxml, BeautifulSoup, re (regular) etc
+- DB = SQL database
+- GET API = Use Node.js
+- HTML Frontend... HTML CSS JS AND PHP
