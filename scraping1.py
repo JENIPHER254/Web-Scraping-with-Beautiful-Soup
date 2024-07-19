@@ -1,6 +1,7 @@
 import requests
 from bs4 import  BeautifulSoup ,SoupStrainer #used for parsing part of a document
 import re
+from urllib.request import urlopen #used to read url and parse the contents
 
 html_doc= """
 <html>
@@ -88,5 +89,20 @@ pageContent = result.content
 soup4 = BeautifulSoup(pageContent,'html.parser')
 # view the file in html read form
 print(soup4.prettify())
+print(" =============================== ENCODING DOCUMENT ==========================")
 # view the encoding of the document
 print(soup4.original_encoding)
+print(soup4.head)
+# finding all link information
+for href in soup4.findAll('a',href=True):
+    print(href['href'])
+
+# Method 2
+url2='https://simplilearn.com/resources'
+webpage = urlopen(url)
+soup5 = BeautifulSoup(webpage,'html.parser')
+webpage.close
+print(soup5.prettify())
+# finding links
+for href in soup5.findAll('a', href=True):
+    print(href['href'])

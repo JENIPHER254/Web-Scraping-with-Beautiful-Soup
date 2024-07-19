@@ -25,3 +25,14 @@ find_next_sibling() = All these scan only for the first  match in the document/t
 - DB = SQL database
 - GET API = Use Node.js
 - HTML Frontend... HTML CSS JS AND PHP
+
+### Task 2: Find a way to extract information for selected user from linkedin
+
+- Manipulate the url (e.g https://linkedin.com/[username_variable])
+- Try the same with google : search from independent/ custom page and display the results on same page without having a DB
+
+
+
+
+
+
