@@ -1,4 +1,5 @@
 from bs4 import  BeautifulSoup
+from bs4 import SoupStrainer #used for parsing part of a document
 import re
 
 html_doc= """
@@ -65,3 +66,17 @@ soup.employee.insert_after(tag1)
 if "This" in tag1.string:
     tag1.string = tag1.string.replace("This", "These")
 print(soup)
+print(" =============================== PARSING PART OF A DOCUMENT USING SOUP STRAINER ==========================")
+
+# You can print using various methodr
+# 1. prettify() method
+# 2. unify(), unicode()method
+
+tagsWithLab = SoupStrainer(id='lab')
+print(BeautifulSoup(str(soup2),'html.parser', parse_only=tagsWithLab).prettify())
+# or
+with open(htmlPage, "r") as organization:
+    html_content = organization.read()
+
+tagsWithLab = SoupStrainer(id='lab')
+print(BeautifulSoup(html_content, 'html.parser', parse_only=tagsWithLab).prettify())
