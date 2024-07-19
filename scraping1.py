@@ -8,6 +8,7 @@ html_doc= """
     <body>
         <b><!-- This line is a comment--></b>
         <h1>WEB SCRAPING</h1>
+        <employee>testing this theory</employee>
     </body>
    
 </html>
@@ -52,3 +53,13 @@ soup3 = BeautifulSoup(emailExample,"lxml")
 myEmail = re.compile("\w+@\w+\.\w+")
 email_id = soup3.findAll(text=myEmail)
 print (email_id[1])
+print(" =============================== MODIFYING A TREE  ==========================")
+tag = soup.employee
+# adding a class to the employee tag
+tag['class']= ['manager']
+print(tag)
+# adding a new tag
+tag1= soup.new_tag('test')
+tag1.string = "This is a New Test Tag"
+soup.employee.insert_after(tag1)
+print(soup)
