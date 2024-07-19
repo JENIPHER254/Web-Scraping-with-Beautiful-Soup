@@ -18,3 +18,6 @@ print(soup.h1)
 print(soup.b.string)
 
 # =============================== SEARCHING IN A TREE WITH FILTERS ==========================
+htmlPage = "test.html"
+with open(htmlPage,"r")as organization: soup2=BeautifulSoup(organization,"lxml")
+soup2.contents

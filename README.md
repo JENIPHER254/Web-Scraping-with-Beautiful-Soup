@@ -13,3 +13,6 @@ find_next_siblings() = All these scan for all matches in the document/tree
 - Searches only for passed arguments and returns only the first matched value else returns none
 - Associated functions include: find_parent(), find_previous_sibling(), find_next(), find_previous(),
 find_next_sibling() = All these scan only for the first  match in the document/tree
+
+### lxml parser installation
+- pip install lxml
