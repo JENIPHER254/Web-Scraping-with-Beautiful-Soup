@@ -7,7 +7,7 @@ html_doc= """
     <head><title>Web Scraping></title></head>
     <body>
         <b><!-- This line is a comment--></b>
-        <h1>WEB SCRAPING</h1>
+        <h1>SCRAPING</h1>
         <employee>testing this theory</employee>
     </body>
    
@@ -62,4 +62,6 @@ print(tag)
 tag1= soup.new_tag('test')
 tag1.string = "This is a New Test Tag"
 soup.employee.insert_after(tag1)
+if "This" in tag1.string:
+    tag1.string = tag1.string.replace("This", "These")
 print(soup)
