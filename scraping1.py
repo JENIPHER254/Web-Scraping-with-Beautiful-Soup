@@ -1,5 +1,5 @@
-from bs4 import  BeautifulSoup
-from bs4 import SoupStrainer #used for parsing part of a document
+import requests
+from bs4 import  BeautifulSoup ,SoupStrainer #used for parsing part of a document
 import re
 
 html_doc= """
@@ -51,7 +51,7 @@ print(findParent)
 print(" =============================== USING REGULAR EXPRESSION  ==========================")
 emailExample = "<br><h1>Searching tor the email</h1><p>jeniperkuki@gmail.com</p><p>onyangoje123@gmail.com</p>"
 soup3 = BeautifulSoup(emailExample,"lxml")
-myEmail = re.compile("\w+@\w+\.\w+")
+myEmail = re.compile(r"\w+@\w+\.\w+")
 email_id = soup3.findAll(text=myEmail)
 print (email_id[1])
 print(" =============================== MODIFYING A TREE  ==========================")
@@ -80,3 +80,13 @@ with open(htmlPage, "r") as organization:
 
 tagsWithLab = SoupStrainer(id='lab')
 print(BeautifulSoup(html_content, 'html.parser', parse_only=tagsWithLab).prettify())
+
+print(" =============================== PRINTING AND FORMATTING ==========================")
+url='https://simplilearn.com'
+result = requests.get(url)
+pageContent = result.content
+soup4 = BeautifulSoup(pageContent,'html.parser')
+# view the file in html read form
+print(soup4.prettify())
+# view the encoding of the document
+print(soup4.original_encoding)
